@@ -15,7 +15,7 @@ function ghostAJAX(request){
         	})
 			.done(function(doneResult){
 				if(typeof(request.success) == 'function'){
-					request.success(resultSet);
+					request.success(doneResult);
 				}
 			})
 			.error(function(e){
@@ -23,7 +23,7 @@ function ghostAJAX(request){
 			})
 			.complete(function(completeResult){
 				if(typeof(request.complete) == 'function'){
-					request.complete(resultBlock);
+					request.complete(completeResult);
 				}
 			});
 		}
